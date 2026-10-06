@@ -1,0 +1,5 @@
+robotframework==7.3.2
+robotframework-seleniumlibrary==6.9.0
+selenium==4.35.0
+webdriver-manager==4.0.2
+allure-robotframework==2.15.3

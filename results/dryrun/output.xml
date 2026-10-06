@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.7 on win32)" generated="2026-09-17T10:34:44.788873" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests">
+<suite id="s1-s1" name="Calculator" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\calculator">
+<suite id="s1-s1-s1" name="TC CALC 08 petrol monthly cost" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\calculator\TC_CALC_08_petrol_monthly_cost.robot">
+<kw name="Open BikeDekho Page" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}${path}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.822476" elapsed="0.000600"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.823763" elapsed="0.000277"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1440</arg>
+<arg>1000</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.824477" elapsed="0.000322"/>
+</kw>
+<arg>${CALCULATOR_PATH}</arg>
+<status status="PASS" start="2026-09-17T10:34:46.818822" elapsed="0.006469"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TC-CALC-08 Calculate Petrol Monthly Running Cost" line="11">
+<kw name="Enter Petrol Calculator Values" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.831136" elapsed="0.000335"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>${distance}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.832028" elapsed="0.000613"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PETROL_PRICE_INPUT}</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.833284" elapsed="0.000274"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PETROL_MILEAGE_INPUT}</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.833934" elapsed="0.000216"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>${PETROL_MILEAGE_INPUT}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.834577" elapsed="0.000276"/>
+</kw>
+<arg>${PETROL_DISTANCE}</arg>
+<arg>${PETROL_PRICE}</arg>
+<arg>${PETROL_MILEAGE}</arg>
+<status status="PASS" start="2026-09-17T10:34:46.830141" elapsed="0.004954"/>
+</kw>
+<kw name="Get Petrol Monthly Cost" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PETROL_MONTHLY_COST}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.840064" elapsed="0.000269"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${monthly_cost}</var>
+<arg>${PETROL_MONTHLY_COST}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.841528" elapsed="0.001037"/>
+</kw>
+<return>
+<value>${monthly_cost}</value>
+<status status="PASS" start="2026-09-17T10:34:46.842827" elapsed="0.002235"/>
+</return>
+<var>${monthly_cost}</var>
+<status status="PASS" start="2026-09-17T10:34:46.838994" elapsed="0.006418"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${monthly_cost}</arg>
+<arg>${PETROL_EXPECTED_MONTHLY_COST}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.852434" elapsed="0.000317"/>
+</kw>
+<tag>calculator</tag>
+<tag>regression</tag>
+<tag>TC-CALC-08</tag>
+<status status="PASS" start="2026-09-17T10:34:46.825730" elapsed="0.028427"/>
+</test>
+<kw name="Close BikeDekho Browser" owner="common" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.859017" elapsed="0.000243"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T10:34:46.857898" elapsed="0.001543"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.859815" elapsed="0.000149"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:46.857326" elapsed="0.002803"/>
+</kw>
+<doc>Verify the monthly petrol running cost calculation.</doc>
+<status status="PASS" start="2026-09-17T10:34:44.903364" elapsed="1.956947"/>
+</suite>
+<suite id="s1-s1-s2" name="TC CALC 09 electric monthly cost" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\calculator\TC_CALC_09_electric_monthly_cost.robot">
+<kw name="Open BikeDekho Page" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}${path}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.894144" elapsed="0.000241"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.894894" elapsed="0.000190"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1440</arg>
+<arg>1000</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.895380" elapsed="0.000226"/>
+</kw>
+<arg>${CALCULATOR_PATH}</arg>
+<status status="PASS" start="2026-09-17T10:34:46.893467" elapsed="0.002324"/>
+</kw>
+<test id="s1-s1-s2-t1" name="TC-CALC-09 Calculate Electric Monthly Running Cost" line="11">
+<kw name="Select Electric Calculator" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELECTRIC_TAB}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.902597" elapsed="0.000258"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ELECTRIC_TAB}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.903242" elapsed="0.000316"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${ELECTRIC_TAB}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.903951" elapsed="0.000188"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EV_DAILY_DISTANCE_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.904466" elapsed="0.000170"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:46.901785" elapsed="0.003004"/>
+</kw>
+<kw name="Enter Electric Calculator Values" owner="calculator_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EV_DAILY_DISTANCE_INPUT}</arg>
+<arg>${distance}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.911040" elapsed="0.000282"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EV_RANGE_INPUT}</arg>
+<arg>${range}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.911806" elapsed="0.000189"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EV_BATTERY_CAPACITY_INPUT}</arg>
+<arg>${battery_capacity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.912265" elapsed="0.000159"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EV_TARIFF_INPUT}</arg>
+<arg>${tariff}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.912682" elapsed="0.000149"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>${EV_TARIFF_INPUT}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.913081" elapsed="0.000169"/>
+</kw>
+<arg>${EV_DISTANCE}</arg>
+<arg>${EV_RANGE}</arg>
+<arg>${EV_BATTERY_CAPACITY}</arg>
+<arg>${EV_TARIFF}</arg>
+<status status="PASS" start="2026-09-17T10:34:46.909883" elapsed="0.003500"/>
+</kw>
+<kw name="Get Electric Monthly Cost" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EV_MONTHLY_COST}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.924599" elapsed="0.000996"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${monthly_cost}</var>
+<arg>${EV_MONTHLY_COST}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.932985" elapsed="0.000453"/>
+</kw>
+<return>
+<value>${monthly_cost}</value>
+<status status="PASS" start="2026-09-17T10:34:46.933847" elapsed="0.000187"/>
+</return>
+<var>${monthly_cost}</var>
+<status status="PASS" start="2026-09-17T10:34:46.923086" elapsed="0.011232"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${monthly_cost}</arg>
+<arg>${EV_EXPECTED_MONTHLY_COST}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:46.938575" elapsed="0.000398"/>
+</kw>
+<tag>calculator</tag>
+<tag>regression</tag>
+<tag>TC-CALC-09</tag>
+<status status="PASS" start="2026-09-17T10:34:46.896007" elapsed="0.052509"/>
+</test>
+<kw name="Close BikeDekho Browser" owner="common" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.004171" elapsed="0.000260"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.000459" elapsed="0.004189"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.005061" elapsed="0.000163"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:46.999924" elapsed="0.005468"/>
+</kw>
+<doc>Verify the monthly electric vehicle running cost calculation.</doc>
+<status status="PASS" start="2026-09-17T10:34:46.866049" elapsed="0.139474"/>
+</suite>
+<suite id="s1-s1-s3" name="TC CALC 10 reject invalid input" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\calculator\TC_CALC_10_reject_invalid_input.robot">
+<kw name="Open BikeDekho Page" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}${path}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.152355" elapsed="0.000256"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.152972" elapsed="0.000222"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1440</arg>
+<arg>1000</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.153544" elapsed="0.000244"/>
+</kw>
+<arg>${CALCULATOR_PATH}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.151774" elapsed="0.002209"/>
+</kw>
+<test id="s1-s1-s3-t1" name="TC-CALC-10 Reject Alphabetic And Symbol Daily Distance" line="11">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>${VALID_DISTANCE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.155854" elapsed="0.000262"/>
+</kw>
+<kw name="Enter Invalid Daily Distance" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.172456" elapsed="0.000468"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>${invalid_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.173559" elapsed="0.000389"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.174523" elapsed="0.000375"/>
+</kw>
+<arg>${INVALID_ALPHA_INPUT}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.162996" elapsed="0.012784"/>
+</kw>
+<kw name="Get Daily Distance Value" owner="calculator_page">
+<kw name="Get Value" owner="SeleniumLibrary">
+<var>${distance}</var>
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.179395" elapsed="0.000242"/>
+</kw>
+<return>
+<value>${distance}</value>
+<status status="PASS" start="2026-09-17T10:34:47.180180" elapsed="0.000104"/>
+</return>
+<var>${distance}</var>
+<status status="PASS" start="2026-09-17T10:34:47.178598" elapsed="0.001874"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${distance}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.181979" elapsed="0.000282"/>
+</kw>
+<kw name="Enter Invalid Daily Distance" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.184328" elapsed="0.000306"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>${invalid_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.185039" elapsed="0.000238"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.185673" elapsed="0.000247"/>
+</kw>
+<arg>${INVALID_SYMBOL_INPUT}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.183177" elapsed="0.002936"/>
+</kw>
+<kw name="Get Daily Distance Value" owner="calculator_page">
+<kw name="Get Value" owner="SeleniumLibrary">
+<var>${distance}</var>
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.191224" elapsed="0.002252"/>
+</kw>
+<return>
+<value>${distance}</value>
+<status status="PASS" start="2026-09-17T10:34:47.194010" elapsed="0.000165"/>
+</return>
+<var>${distance}</var>
+<status status="PASS" start="2026-09-17T10:34:47.187924" elapsed="0.007139"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<arg>${distance}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.203072" elapsed="0.000356"/>
+</kw>
+<tag>calculator</tag>
+<tag>regression</tag>
+<tag>TC-CALC-10</tag>
+<status status="PASS" start="2026-09-17T10:34:47.154169" elapsed="0.050791"/>
+</test>
+<kw name="Close BikeDekho Browser" owner="common" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.238674" elapsed="0.000453"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.235933" elapsed="0.009586"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.246345" elapsed="0.000537"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:47.234772" elapsed="0.012324"/>
+</kw>
+<doc>Verify alphabetic and symbol input is rejected by numeric fields.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.067948" elapsed="0.179269"/>
+</suite>
+<status status="PASS" start="2026-09-17T10:34:44.900399" elapsed="2.385327"/>
+</suite>
+<suite id="s1-s2" name="Comparison" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\comparison">
+<suite id="s1-s2-s1" name="TC COMP 04 hide common features" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\comparison\TC_COMP_04_hide_common_features.robot">
+<kw name="Open BikeDekho Page" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>${BASE_URL}${path}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.481260" elapsed="0.000369"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.482087" elapsed="0.000185"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1440</arg>
+<arg>1000</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.482917" elapsed="0.000334"/>
+</kw>
+<arg>${COMPARISON_PATH}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.479073" elapsed="0.004417"/>
+</kw>
+<test id="s1-s2-s1-t1" name="TC-COMP-04 Hide Common Features And Show Only Different Values" line="10">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${COMPARISON_DATA_ROWS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.485564" elapsed="0.000282"/>
+</kw>
+<kw name="Hide Common Comparison Features" owner="comparison_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HIDE_COMMON_FEATURES_CHECKBOX}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.487574" elapsed="0.000250"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${HIDE_COMMON_FEATURES_CHECKBOX}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.488232" elapsed="0.000243"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<arg>${HIDE_COMMON_FEATURES_CHECKBOX}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.488871" elapsed="0.000329"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Common Comparison Rows Should Be Hidden" owner="comparison_page">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>@{common_rows}</var>
+<arg>${COMMON_DATA_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.496517" elapsed="0.000238"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${row}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.498306" elapsed="0.000198"/>
+</kw>
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${row}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.497876" elapsed="0.000789"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${is_visible}</arg>
+<arg>A common specification row is still visible.</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.499008" elapsed="0.000281"/>
+</kw>
+<var name="${row}"/>
+<status status="PASS" start="2026-09-17T10:34:47.497470" elapsed="0.001989"/>
+</iter>
+<var>${row}</var>
+<value>@{common_rows}</value>
+<status status="PASS" start="2026-09-17T10:34:47.497053" elapsed="0.002609"/>
+</for>
+<status status="PASS" start="2026-09-17T10:34:47.495804" elapsed="0.004108"/>
+</kw>
+<arg>5x</arg>
+<arg>500ms</arg>
+<arg>Common Comparison Rows Should Be Hidden</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.491162" elapsed="0.008880"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:47.486826" elapsed="0.013388"/>
+</kw>
+<kw name="Visible Comparison Rows Should Contain Different Values" owner="comparison_page">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>@{rows}</var>
+<arg>${DIFFERENT_DATA_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.502331" elapsed="0.000146"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${visible_row_count}</var>
+<arg>${0}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.502726" elapsed="0.000101"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${row}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.503804" elapsed="0.000117"/>
+</kw>
+<var>${is_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${row}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.503541" elapsed="0.000472"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_visible}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${visible_row_count}</var>
+<arg>${visible_row_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.504461" elapsed="0.000120"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<var>${cells}</var>
+<arg>${row}</arg>
+<arg>find_elements</arg>
+<arg>tag name</arg>
+<arg>td</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.504787" elapsed="0.000122"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<arg>${cells}</arg>
+<arg>3</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.505120" elapsed="0.000130"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${feature}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.505503" elapsed="0.000113"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${left_value}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.505859" elapsed="0.000118"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${right_value}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.506255" elapsed="0.000238"/>
+</kw>
+<kw name="Normalize Space" owner="comparison_page">
+<kw name="Replace String Using Regexp" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<arg>\\s+</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.507620" elapsed="0.000444"/>
+</kw>
+<return>
+<value>${value.strip()}</value>
+<status status="PASS" start="2026-09-17T10:34:47.508655" elapsed="0.000579"/>
+</return>
+<var>${feature}</var>
+<arg>${feature}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.506988" elapsed="0.002650"/>
+</kw>
+<kw name="Normalize Space" owner="comparison_page">
+<kw name="Replace String Using Regexp" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<arg>\\s+</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.511021" elapsed="0.000286"/>
+</kw>
+<return>
+<value>${value.strip()}</value>
+<status status="PASS" start="2026-09-17T10:34:47.511532" elapsed="0.000084"/>
+</return>
+<var>${left_value}</var>
+<arg>${left_value}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.510241" elapsed="0.001535"/>
+</kw>
+<kw name="Normalize Space" owner="comparison_page">
+<kw name="Replace String Using Regexp" owner="String">
+<var>${value}</var>
+<arg>${value}</arg>
+<arg>\\s+</arg>
+<arg>${SPACE}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.512926" elapsed="0.000253"/>
+</kw>
+<return>
+<value>${value.strip()}</value>
+<status status="PASS" start="2026-09-17T10:34:47.513374" elapsed="0.000075"/>
+</return>
+<var>${right_value}</var>
+<arg>${right_value}</arg>
+<status status="PASS" start="2026-09-17T10:34:47.512249" elapsed="0.001343"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" owner="BuiltIn">
+<arg>${left_value}</arg>
+<arg>${right_value}</arg>
+<arg>Visible row '${feature}' contains the same value for both vehicles.</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.513917" elapsed="0.000235"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:47.504234" elapsed="0.010064"/>
+</branch>
+<status status="PASS" start="2026-09-17T10:34:47.504185" elapsed="0.010256"/>
+</if>
+<var name="${row}"/>
+<status status="PASS" start="2026-09-17T10:34:47.503331" elapsed="0.011202"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2026-09-17T10:34:47.502982" elapsed="0.011700"/>
+</for>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${visible_row_count} &gt; 0</arg>
+<arg>No differing specification rows were visible.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.515018" elapsed="0.000247"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:47.501815" elapsed="0.013618"/>
+</kw>
+<tag>comparison</tag>
+<tag>regression</tag>
+<tag>TC-COMP-04</tag>
+<status status="PASS" start="2026-09-17T10:34:47.483712" elapsed="0.032342"/>
+</test>
+<kw name="Close BikeDekho Browser" owner="common" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.519533" elapsed="0.000158"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.519078" elapsed="0.000768"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="NOT RUN" start="2026-09-17T10:34:47.520188" elapsed="0.000131"/>
+</kw>
+<status status="PASS" start="2026-09-17T10:34:47.518514" elapsed="0.001953"/>
+</kw>
+<doc>Verify Hide Common Features for Honda Activa and TVS Jupiter.</doc>
+<status status="PASS" start="2026-09-17T10:34:47.355338" elapsed="0.165256"/>
+</suite>
+<status status="PASS" start="2026-09-17T10:34:47.344128" elapsed="0.191499"/>
+</suite>
+<status status="PASS" start="2026-09-17T10:34:44.797990" elapsed="2.745299"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">calculator</stat>
+<stat pass="1" fail="0" skip="0">comparison</stat>
+<stat pass="4" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">TC-CALC-08</stat>
+<stat pass="1" fail="0" skip="0">TC-CALC-09</stat>
+<stat pass="1" fail="0" skip="0">TC-CALC-10</stat>
+<stat pass="1" fail="0" skip="0">TC-COMP-04</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="0">Tests</stat>
+<stat name="Calculator" id="s1-s1" pass="3" fail="0" skip="0">Tests.Calculator</stat>
+<stat name="TC CALC 08 petrol monthly cost" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Calculator.TC CALC 08 petrol monthly cost</stat>
+<stat name="TC CALC 09 electric monthly cost" id="s1-s1-s2" pass="1" fail="0" skip="0">Tests.Calculator.TC CALC 09 electric monthly cost</stat>
+<stat name="TC CALC 10 reject invalid input" id="s1-s1-s3" pass="1" fail="0" skip="0">Tests.Calculator.TC CALC 10 reject invalid input</stat>
+<stat name="Comparison" id="s1-s2" pass="1" fail="0" skip="0">Tests.Comparison</stat>
+<stat name="TC COMP 04 hide common features" id="s1-s2-s1" pass="1" fail="0" skip="0">Tests.Comparison.TC COMP 04 hide common features</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

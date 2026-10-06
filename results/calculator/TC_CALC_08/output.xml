@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.7 on win32)" generated="2026-09-17T11:08:24.293178" rpa="false" schemaversion="5">
+<suite id="s1" name="TC CALC 08 petrol monthly cost" source="C:\Users\bhavisin\OneDrive - Capgemini\bikedekho workspace\tests\calculator\TC_CALC_08_petrol_monthly_cost.robot">
+<kw name="Open BikeDekho Page" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:25.822071" level="INFO">Opening browser 'chrome' to base url 'https://www.bikedekho.com/fuel-calculator'.</msg>
+<arg>${BASE_URL}${path}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-17T11:08:25.821446" elapsed="9.815176"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-09-17T11:08:35.637400" elapsed="0.099874"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1440</arg>
+<arg>1000</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2026-09-17T11:08:35.738019" elapsed="1.523278"/>
+</kw>
+<arg>${CALCULATOR_PATH}</arg>
+<status status="PASS" start="2026-09-17T11:08:25.819483" elapsed="11.442603"/>
+</kw>
+<test id="s1-t1" name="TC-CALC-08 Calculate Petrol Monthly Running Cost" line="11">
+<kw name="Enter Petrol Calculator Values" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-17T11:08:37.270174" elapsed="1.032834"/>
+</kw>
+<kw name="Set Calculator Input Value" owner="calculator_page">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:38.386955" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4489900d9103b854130a47efd3a06982", element="f.ED0B062473AB1652A71EEBEA17CCAC8C.d.DE69C4453B8BFAA96524D0F2E3D8C9B2.e.5")&gt;</msg>
+<var>${element}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-09-17T11:08:38.307433" elapsed="0.079760"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:38.392486" level="INFO">Executing JavaScript:
+const input = arguments[0];const value = String(arguments[1]);const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;setter.call(input, value);input.dispatchEvent(new Event('input', { bubbles: true }));input.dispatchEvent(new Event('change', { bubbles: true }));
+By using arguments:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4489900d9103b854130a47efd3a06982", element="f.ED0B062473AB1652A71EEBEA17CCAC8C.d.DE69C4453B8BFAA96524D0F2E3D8C9B2.e.5")&gt;' and '50'</msg>
+<arg>const input = arguments[0];</arg>
+<arg>const value = String(arguments[1]);</arg>
+<arg>const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;</arg>
+<arg>setter.call(input, value);</arg>
+<arg>input.dispatchEvent(new Event('input', { bubbles: true }));</arg>
+<arg>input.dispatchEvent(new Event('change', { bubbles: true }));</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<arg>${value}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-17T11:08:38.390557" elapsed="0.045949"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:41.019431" level="INFO">Element 'id=kmsvalue' attribute 'value' contains value '50'.</msg>
+<arg>${locator}</arg>
+<arg>value</arg>
+<arg>${value}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-09-17T11:08:38.441838" elapsed="2.577973"/>
+</kw>
+<arg>5x</arg>
+<arg>300ms</arg>
+<arg>Element Attribute Value Should Be</arg>
+<arg>${locator}</arg>
+<arg>value</arg>
+<arg>${value}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-09-17T11:08:38.437213" elapsed="2.584196"/>
+</kw>
+<arg>${PETROL_DAILY_DISTANCE_INPUT}</arg>
+<arg>${distance}</arg>
+<status status="PASS" start="2026-09-17T11:08:38.303644" elapsed="2.718302"/>
+</kw>
+<kw name="Set Calculator Input Value" owner="calculator_page">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:41.062103" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4489900d9103b854130a47efd3a06982", element="f.ED0B062473AB1652A71EEBEA17CCAC8C.d.DE69C4453B8BFAA96524D0F2E3D8C9B2.e.7")&gt;</msg>
+<var>${element}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.024680" elapsed="0.037565"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:41.063811" level="INFO">Executing JavaScript:
+const input = arguments[0];const value = String(arguments[1]);const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;setter.call(input, value);input.dispatchEvent(new Event('input', { bubbles: true }));input.dispatchEvent(new Event('change', { bubbles: true }));
+By using arguments:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4489900d9103b854130a47efd3a06982", element="f.ED0B062473AB1652A71EEBEA17CCAC8C.d.DE69C4453B8BFAA96524D0F2E3D8C9B2.e.7")&gt;' and '100'</msg>
+<arg>const input = arguments[0];</arg>
+<arg>const value = String(arguments[1]);</arg>
+<arg>const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;</arg>
+<arg>setter.call(input, value);</arg>
+<arg>input.dispatchEvent(new Event('input', { bubbles: true }));</arg>
+<arg>input.dispatchEvent(new Event('change', { bubbles: true }));</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<arg>${value}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.062740" elapsed="0.076995"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:41.204678" level="INFO">Element 'id=petrolpricevalue' attribute 'value' contains value '100'.</msg>
+<arg>${locator}</arg>
+<arg>value</arg>
+<arg>${value}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.141869" elapsed="0.063170"/>
+</kw>
+<arg>5x</arg>
+<arg>300ms</arg>
+<arg>Element Attribute Value Should Be</arg>
+<arg>${locator}</arg>
+<arg>value</arg>
+<arg>${value}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.140523" elapsed="0.064955"/>
+</kw>
+<arg>${PETROL_PRICE_INPUT}</arg>
+<arg>${price}</arg>
+<status status="PASS" start="2026-09-17T11:08:41.022910" elapsed="0.182997"/>
+</kw>
+<kw name="Set Calculator Input Value" owner="calculator_page">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:41.241436" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="4489900d9103b854130a47efd3a06982", element="f.ED0B062473AB1652A71EEBEA17CCAC8C.d.DE69C4453B8BFAA96524D0F2E3D8C9B2.e.6")&gt;</msg>
+<var>${element}</var>
+<arg>${locator}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.208251" elapsed="0.033342"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:41.243289" level="INFO">Executing JavaScript:
+const input = arguments[0];const value = String(arguments[1]);const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;setter.call(input, value);input.dispatchEvent(new Event('input', { bubbles: true }));input.dispatchEvent(new Event('change', { bubbles: true }));
+By using arguments:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="4489900d9103b854130a47efd3a06982", element="f.ED0B062473AB1652A71EEBEA17CCAC8C.d.DE69C4453B8BFAA96524D0F2E3D8C9B2.e.6")&gt;' and '50'</msg>
+<arg>const input = arguments[0];</arg>
+<arg>const value = String(arguments[1]);</arg>
+<arg>const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;</arg>
+<arg>setter.call(input, value);</arg>
+<arg>input.dispatchEvent(new Event('input', { bubbles: true }));</arg>
+<arg>input.dispatchEvent(new Event('change', { bubbles: true }));</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<arg>${value}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.242118" elapsed="0.159376"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:43.495991" level="INFO">Element 'id=mileagevalue' attribute 'value' contains value '50'.</msg>
+<arg>${locator}</arg>
+<arg>value</arg>
+<arg>${value}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.406405" elapsed="2.090150"/>
+</kw>
+<arg>5x</arg>
+<arg>300ms</arg>
+<arg>Element Attribute Value Should Be</arg>
+<arg>${locator}</arg>
+<arg>value</arg>
+<arg>${value}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-09-17T11:08:41.402545" elapsed="2.094626"/>
+</kw>
+<arg>${PETROL_MILEAGE_INPUT}</arg>
+<arg>${mileage}</arg>
+<status status="PASS" start="2026-09-17T11:08:41.206856" elapsed="2.290963"/>
+</kw>
+<arg>${PETROL_DISTANCE}</arg>
+<arg>${PETROL_PRICE}</arg>
+<arg>${PETROL_MILEAGE}</arg>
+<status status="PASS" start="2026-09-17T11:08:37.267747" elapsed="6.230594"/>
+</kw>
+<kw name="Get Petrol Monthly Cost" owner="calculator_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PETROL_MONTHLY_COST}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-17T11:08:43.520555" elapsed="1.425367"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:48.517104" level="INFO">${monthly_cost} = Monthly Fuel cost for Petrol
+Rs.3,000</msg>
+<var>${monthly_cost}</var>
+<arg>${PETROL_MONTHLY_COST}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-17T11:08:44.946437" elapsed="3.570894"/>
+</kw>
+<return>
+<value>${monthly_cost}</value>
+<status status="PASS" start="2026-09-17T11:08:48.517807" elapsed="0.000739"/>
+</return>
+<msg time="2026-09-17T11:08:48.519723" level="INFO">${monthly_cost} = Monthly Fuel cost for Petrol
+Rs.3,000</msg>
+<var>${monthly_cost}</var>
+<status status="PASS" start="2026-09-17T11:08:43.517417" elapsed="5.002466"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${monthly_cost}</arg>
+<arg>${PETROL_EXPECTED_MONTHLY_COST}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-09-17T11:08:48.531869" elapsed="0.001397"/>
+</kw>
+<tag>calculator</tag>
+<tag>regression</tag>
+<tag>TC-CALC-08</tag>
+<status status="PASS" start="2026-09-17T11:08:37.262692" elapsed="11.280030"/>
+</test>
+<kw name="Close BikeDekho Browser" owner="common" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-17T11:08:50.783198" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-17T11:08:48.705830" elapsed="2.078075"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-09-17T11:08:48.705362" elapsed="2.079833"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-17T11:08:50.786675" elapsed="6.572753"/>
+</kw>
+<status status="PASS" start="2026-09-17T11:08:48.704587" elapsed="8.655073"/>
+</kw>
+<doc>Verify the monthly petrol running cost calculation.</doc>
+<status status="PASS" start="2026-09-17T11:08:24.304795" elapsed="33.054962"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">calculator</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">TC-CALC-08</stat>
+</tag>
+<suite>
+<stat name="TC CALC 08 petrol monthly cost" id="s1" pass="1" fail="0" skip="0">TC CALC 08 petrol monthly cost</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
